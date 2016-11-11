@@ -8,6 +8,7 @@
 # 2. get the value of the matrix
 # 3. set the value of inverse of the matrix
 # 4. get the value of inverse of the matrix
+
 makeCacheMatrix <- function(x = matrix()) {
     inverse <- NULL
     
@@ -29,8 +30,8 @@ makeCacheMatrix <- function(x = matrix()) {
     }
     
     list(set=set, get=get, setinverse=setinverse, getinverse=getinverse)
-    
 }
+
 
 
 # cacheSolve returns the inverse matrix of a given matrix (having previously "Cacheed" it)
@@ -38,6 +39,7 @@ makeCacheMatrix <- function(x = matrix()) {
 # In case we did, it returns it inverse value (which was stored in the cache list) and does no calculations
 # In case we did not, it computes the inverse and stores it in the cache list
 # WARNING: We assume that the matrix supplied is always invertible
+
 cacheSolve <- function(x, ...) {
     
     inverse <- x$getinverse()
@@ -52,7 +54,3 @@ cacheSolve <- function(x, ...) {
     x$setinverse(inverse)
     inverse
 }
-
-
-
-
